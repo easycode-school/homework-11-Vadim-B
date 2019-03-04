@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row flex-column flex-sm-row justify-content-center">
+    <div class="tab text-uppercase" [class.active]="tabActive === 'open'" (click)="changeParam('1', '0', 'open')">Open</div>
+    <div class="tab text-uppercase" [class.active]="tabActive === 'upcoming'" (click)="changeParam('0', '0', 'upcoming')">Upcoming</div>
+    <div class="tab text-uppercase" [class.active]="tabActive === 'closed'" (click)="changeParam('0', '1', 'closed')">Closed</div>
+  </div>
+
+  <div class="row challenges-wrap" *ngIf="challengesParams">
+    <div class="col-12 col-lg-6 col-xl-4 h-300 challenge-wrap" *ngFor="let challenge of challenges?.challenges">
+      <app-challenges-item [challenge]="challenge"></app-challenges-item>
+    </div>
+  </div>
+</div>

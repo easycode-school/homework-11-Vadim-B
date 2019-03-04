@@ -1,0 +1,26 @@
+.tab {
+	padding: 20px 30px 20px 30px;
+	cursor: pointer;
+	border-bottom: 2px transparent solid;
+	transition: .5s;
+}
+
+.tab:hover {
+	border-color: blueviolet;
+}
+
+.tab.active {
+	color: #e12ebc;
+	border-color: #e12ebc;
+	transition: .5s;
+}
+
+.challenges-wrap {
+	padding-top: 55px;
+	padding-bottom: 80px;
+}
+
+.challenge-wrap {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
