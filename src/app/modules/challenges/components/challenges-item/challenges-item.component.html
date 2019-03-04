@@ -1,0 +1,25 @@
+<div class="challenge-item flex-column cur-pointer h-100">
+  <h3>{{ challenge.challenge_name }}</h3>
+  <div class="img-wrap">
+    <img src="{{ challenge.background }}" alt="{{ challenge.challenge_name }}">
+    <div class="challenge-item-overlay">
+      <div class="overlay-top justify-content-center align-items-center"></div>
+      <div class="overlay-bottom d-flex justify-content-between text-uppercase">
+        <div class="awards d-flex flex-column justify-content-end">
+          <span class="count">${{ challenge.awards | numFormatChange }}</span>
+          <span class="desc">Awards worth</span>
+        </div>
+        <ng-container *ngIf="challenge.is_active && !challenge.is_closed">
+          <div class="days borders d-flex flex-column justify-content-end" *appDateTransform="endChallengeDate"></div>
+        </ng-container>
+        <div class="days borders d-flex flex-column justify-content-end">
+          <span class="desc" *ngIf="!challenge.is_active && challenge.is_closed">{{ endChallengeDate | dateTransform }}</span>
+        </div>
+        <div class="votes d-flex flex-column justify-content-end">
+          <span class="count">{{ challenge.votes | numFormatChange }}</span>
+          <span class="desc">Votes</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
